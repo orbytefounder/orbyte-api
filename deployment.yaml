@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orchestration-deployment 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: orchestration-api 
+  template:
+    metadata:
+      labels:
+        app: orchestration-api 
+    spec:
+      containers:
+        - name: orchestration-api
+          image: orchestration-api:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
