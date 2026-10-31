@@ -57,7 +57,7 @@ func (og *OrbyteGateway) ServeHTTP(w http.ResponseWriter, r *http.Request) {
   req.Header.Set("Content-Type", "application/json")
   resp, err := og.Pool.Client.Do(req)
   if err != nil {
-    w.WriterHeader(http.StatusInternalServerError)
+    w.WriteHeader(http.StatusInternalServerError)
     return
     }
   defer resp.Body.Close()
