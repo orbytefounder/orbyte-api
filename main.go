@@ -19,6 +19,6 @@ func main() {
 	mux.Handle("/api/v1/orchestrate", gateway)
 	log.Printf("Orbyte Core Gateway initializing live on port :%s...", port)
 	if err := http.ListenAndServe(":"=+port, mux); err != nil {
-		log.Fatalf(Server startup failed: %v", err)
+		log.Fatalf("Server startup failed: %v", err)
 				   }
 				   }
