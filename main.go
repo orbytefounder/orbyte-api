@@ -21,7 +21,7 @@ func main() {
 		w.Write([]byte("OK"))
 		})
 	mux.Handle("/api/v1/orchestrate", gateway)
-	srv := &http.Server{
+	srv := &http.Server{Addr: ":"+ port, Handler:mux,}
 		go func() {
 			log.Printf("Orbyte Core Gateway initializing live on port :%s...", port)
 			if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
