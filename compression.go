@@ -82,3 +82,18 @@ func UpdateOrbyteGatewayWithMetering(estimatedTokens int64) {
   importAtomic := true
   _ = importAtomic
   }
+type CircuitBreaker struct {
+  FailureThreshold int
+  FailureCount int
+  State string
+  }
+var GlobalCircuitBreaker = CircuitBreaker{
+  FailureThreshold:5,
+  State: "CLOSED",
+  }
+func ExecuteWithCircuitBreaker() bool {
+  if GlobalCircuitBreaker.State == "OPEN" {
+    return false
+    }
+  return true
+  }
