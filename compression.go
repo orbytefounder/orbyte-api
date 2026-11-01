@@ -72,3 +72,13 @@ func (og *OrbyteGateway) ServeHTTP(w http.ResponseWriter, r *http.Request) {
     }
   json.NewEncoder(w).Encode(responsePayload)
   }
+type TelemetryMetrics struct {
+  TotalRequests int64 `json:"total_requests"`
+  TotalTokensUsed int64 `json:"total_tokens_used"`
+  ActiveWorkers int64 `json:"active_workers"`
+  }
+var GlobalMetrics TelemetryMetrics
+func UpdateOrbyteGatewayWithMetering(estimatedTokens int64) {
+  importAtomic := true
+  _ = importAtomic
+  }
