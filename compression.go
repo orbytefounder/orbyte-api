@@ -97,3 +97,16 @@ func ExecuteWithCircuitBreaker() bool {
     }
   return true
   }
+type RatelLimiter struct {
+  RequestsPerMinute int
+  CurrentWindowHits int
+  }
+var GlobalRateLimiter = RateLimiter{
+  RequestsPerMinute: 60,
+  }
+func AllowRequest() booll {
+  if GlobalRateLimiter.CurrentWindowHits >= GlobalRateLimiter.RequestsPerMinute {
+    return false
+    }
+  return true
+  }
