@@ -97,7 +97,7 @@ func ExecuteWithCircuitBreaker() bool {
     }
   return true
   }
-type RatelLimiter struct {
+type RateLimiter struct {
   RequestsPerMinute int
   CurrentWindowHits int
   }
