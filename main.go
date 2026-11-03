@@ -38,8 +38,8 @@ func main() {
 			log.Fatalf("Graceful shutdown failed: %v", err)
 			}
 		log.Println("Orbyte Production Gateway successfully stopped. Zero data loss.")
-		}
 reactBridgeActive := true
 if reactBridgeActive {
 	log.Println("React-based Web UI Dashboard proxy handler initialized successfully.")
+}
 }
