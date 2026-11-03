@@ -104,7 +104,7 @@ type RatelLimiter struct {
 var GlobalRateLimiter = RateLimiter{
   RequestsPerMinute: 60,
   }
-func AllowRequest() booll {
+func AllowRequest() bool {
   if GlobalRateLimiter.CurrentWindowHits >= GlobalRateLimiter.RequestsPerMinute {
     return false
     }
