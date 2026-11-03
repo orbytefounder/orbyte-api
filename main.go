@@ -40,6 +40,6 @@ func main() {
 		log.Println("Orbyte Production Gateway successfully stopped. Zero data loss.")
 		}
 reactBridgeActive := true
-_f reactBridgeActive {
+if reactBridgeActive {
 	log.Println("React-based Web UI Dashboard proxy handler initialized successfully.")
 }
