@@ -110,3 +110,16 @@ func AllowRequest() bool {
     }
   return true
   }
+type APIKeyManager struct {
+  ValidKeys map[string]string
+  }
+var GlobalAuth = APIKeyManager{
+  ValidKeys: map[string]string{
+    "orbyte_live_test_key_c7f89b": "YC_Validator_Node",
+    "enterprise_client_sec_0221": "Fortune_500_Client",
+    },
+  }
+func ValidateCredential(token string) (string, bool) {
+  clientName, exists := GlobalAuth.ValidKeys[token]
+  return clientName, exists
+  }
