@@ -20,7 +20,22 @@ func main() {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("OK"))
 		})
-	mux.Handle("/api/v1/orchestrate", gateway)
+	mux.HandleFunc("/api/v1/orchestrate", func(w http.ResponseWriter, r *http.Request) {
+		token := r.Header.Get("Authorization")
+		if token == "" {
+			w.WriteHeader(http.StatusUnauthorized)
+			w.Write([]byte(`{"error": "Missing Enterprise API Key"}`))
+			return
+			}
+		client,valid := ValidateCredential(token)
+		if !valid {
+			w.WriteHeader(http.StatusForbidden)
+			w.Write([]byte(`{"error": "Invalid Enterprise Credentials"}`))
+			return
+			}
+		log.Printf("Secure access granted for client: %s", client)
+		gateway.ServeHTTP(w, r)
+		})
 	srv := &http.Server{Addr: ":"+ port, Handler:mux,}
 		go func() {
 			log.Printf("Orbyte Core Gateway initializing live on port :%s...", port)
