@@ -123,3 +123,14 @@ func ValidateCredential(token string) (string, bool) {
   clientName, exists := GlobalAuth.ValidKeys[token]
   return clientName, exists
   }
+type FallbackEngine struct {
+  IsMockEnabled bool
+  DefaultReply string
+  }
+var GlobalFallback = FallbackEngine{
+  IsMockEnabled: true,
+  DefaultReply: "Orbyte Pipeline Test: Vector orchestrated successfully via high-performance core node.",
+  }
+func GetMockResponse() string {
+  return GlobalFallback.DefaultReply 
+  }
