@@ -22,7 +22,7 @@ func main() {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("OK"))
 		})
-	mux.HandleFunc("/api/v1/public-demo", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		start := time.Now()
 		query := r.URL.Query().Get("query")
 		if query == "" {
