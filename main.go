@@ -33,7 +33,7 @@ func main() {
 		heapMB := float64(m.HeapAlloc) / 1024/1024
 		elapsed := time.Since(start)
 		w.Header().Set("Content-Type", "application/json")
-		w.Header().Set(Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.WriteHeader(http.StatusOK)
 		fmt.Fprintf(w, `{"status":"operational","engine":"Orbyte Pure Golang Gateway","tested_query":"%s","core_execution_time":"%s","live_heap_mb":%.2f,"security_guard":"Active (<2ns Token Guard protecting /api/v1/orchestrate)"}`, query, elapsed, heapMB)
 })
