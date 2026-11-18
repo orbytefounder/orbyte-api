@@ -34,4 +34,4 @@
 Run `k6 run --vus 5 --duration 10s test.js`
 (targeting https://orbyte-api.onrender.com ) to independently verify the  `0.00%` error rate and live benchmark metrics reported above.
 * **1-Click Terminal Verification (`200 OK` & Microsecond Speed):**
-  ( curl -i https://orbyte-api.onrender.com )
+   ( curl -i https://orbyte-api.onrender.com )
