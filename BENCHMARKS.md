@@ -10,12 +10,12 @@
 * **End-to-End Cross-Container Roadtrip (BD -> US):** `260.37 ms` (min) |`310.07 ms`` (medium) | `345.40` (p90)
 * ---
 * ## 2. Report A: Orbyte vs. Hasura GraphQL Engine
-* | Benchmark Metric | Hasura GraphQL Engine (512MB Spec) | Orbyte Pure Golang Gateway (Verified) | Architectural Advantage |
-* | :--- | :--- | :--- | :--- |
-* | **Core Engine Overhead** | ~85.00 ms (Haskell runtime & AST parsing) | **0.06 ms (`62.65 µs`)** | **>1,000x faster internal routing** |
-* | **Base Memory Footprint** | ~185.0 MB - 240.0 MB (High OOM risk) | **1.11 MB Live Heap (`~14.3 MB` RSS)** | **92%+ RAM saved; zero OOM risk** |
-* | **Concurrent Load Stability** | GC pauses & timeouts on 512MB tiers | **94 / 94 succeeded (`0.00%` error)** | **100% deterministic reliability** |
-* | **Cloud Infrastructure Cost** | Requires 1GB-2GB+ RAM instances | **Runs smoothly on 512MB micro-nodes** | **50%+ direct cloud compute cost cut** |
+| Benchmark Metric | Hasura GraphQL Engine (512MB Spec) | Orbyte Pure Golang Gateway (Verified) | Architectural Advantage |
+| :--- | :--- | :--- | :--- |
+| **Core Engine Overhead** | ~85.00 ms (Haskell runtime & AST parsing) | **0.06 ms (`62.65 µs`)** | **>1,000x faster internal routing** |
+| **Base Memory Footprint** | ~185.0 MB - 240.0 MB (High OOM risk) | **1.11 MB Live Heap (`~14.3 MB` RSS)** | **92%+ RAM saved; zero OOM risk** |
+| **Concurrent Load Stability** | GC pauses & timeouts on 512MB tiers | **94 / 94 succeeded (`0.00%` error)** | **100% deterministic reliability** |
+| **Cloud Infrastructure Cost** | Requires 1GB-2GB+ RAM instances | **Runs smoothly on 512MB micro-nodes** | **50%+ direct cloud compute cost cut** |
 * ---
 ## 3. Report B: Orbyte vs. Kong API Gateway
 | Benchmark Metric | Kong API Gateway (OpenResty / Nginx + Lua) | Orbyte Pure Golang Gateway (Verified) | Architectural Advantage |
