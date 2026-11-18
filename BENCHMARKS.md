@@ -30,3 +30,5 @@
 * **1-Click Terminal Command:** curl -i https://orbyte-api.onrender.com ["Run the command to verify it"]
 * **Live Telemetry Dashboard:** https://orbyte-dashboard-eight.vercel.app  (Key: orbyte_live_test_key_c7f89b)
 * **24/7 Uptime Verification (100%):** https://stats.uptimerobot.com/yqUCK3oX7b
+* **Verify Practical- `k6` Load Test Yourself (Target: https://orbyte-api.onrender.com ):**
+Run `k6 run --vus 5 --duration 10s test.js` (targeting https://orbyte-api.onrender.com ) to independently verify the  `0.00%` error rate and live benchmark metrics reported above. `curl -i https://orbyte-api.onrender.com `
