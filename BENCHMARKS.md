@@ -25,8 +25,8 @@
 | **Security Auth Overhead** | ~1.5 ms -3.0 ms per token lookup | **`<2ns` constent-time Token Guard** | **Zero-allocation auth verification** |
 | **External Dependencies** | Requires Postgres/Cassandra cluster | **Single static Go binary, zero DB** | **50%+ lower TCO & instant startup** |
 ---
-## 4.1-Click Live Verification (For YC Reviewers)
+## 4.1-Click Live Verification (For YC Reviewers) Verify it.
 * **1-Click Browser Test (No Key Needed):** https://orbyte-api.onrender.com ?query=yc_review
-* **1-Click Terminal Command:** curl -i https://orbyte-api.onrender.com
+* **1-Click Terminal Command:** curl -i https://orbyte-api.onrender.com ["Run the K6 test command to verify it"]
 * **Live Telemetry Dashboard:** https://orbyte-dashboard-eight.vercel.app  (Key: orbyte_live_test_key_c7f89b)
 * **24/7 Uptime Verification (100%):** https://stats.uptimerobot.com/yqUCK3oX7b
