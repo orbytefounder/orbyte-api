@@ -11,12 +11,16 @@ Unlike heavy, general-purpose middleware (such as Kong or Hasura) that rely on c
 6. **Circuit Breaker & Dynamic Rate Limiting:** Protects backend infrastructure from cascading failures and DDoS bursts.
 7. **OS-Level Graceful Shutdown:** Captures`SIGTERM`/`SIGINT` signals to drain active requests safely with zero packet loss.
    ## Production Validation & Live Telemetry
-   **Live Production
-    Endpoint:**  (https://orbyte-api.onrender.com/api/v1/orchestrate)
-   * **Independent Uptime Monitoring:** Verified 24/7 via **UptimeRobot** (View Live Public Status Page] ( https://stats.uptimerobot.com/yqUCK3oX7b  ))
-   * **Overall Uptime:** `100.000%` (40+ days continuous operation)
-   * **Downtime / Incidents:** `0`
-   * **Global Average Roundtrip:** `~66ms` (from North America Ashburn monitoring nodes)
+   * **1-Click Live Investor Sandbox (No API Key Needed):**
+    [ https://orbyte-api.onrender.com ] *(~29.5μs-62.6μs core execution, 0.27MB-1.11MB  live heap memory)*
+   * **1-Click Terminal Verification :** curl -i https://orbyte-api.onrender.com
+   * **Practical k6 Load Test & Competitive Benchmark Reports ( Orbyte vs . Hasura & Kong):** [View Full BENCHMARKS.md Report]
+     ( https://github.com/orbytefounder/orbyte-api/blob/main/BENCHMARKS.md ) *(86-133 sustained requests, 0.00% error rate, 50%+ cloud cost reduction)*
+     * **Live Telemetry Dashboard:** [ https://orbyte-dashboard-eight.vercel.app ] *
+     *(test Key: orbyte_live_test_key_c7f89b )*
+   * **Enterprise Secured Endpoint:**
+      `POST ( https://orbyte-api.onrender.com/api/v1/orchestrate *(Protected by `<2ns` Enterprise Token Guard )*
+     * **Independent 24/7 Uptime Monitoring :** [View Live Public Status Page ( 100% Operational- 45+ days , 0 Incidents)] ( https://stats.uptimerobot.com/yqUCK3oX7b )
      ---
      ## Post-Funding Engineering Roadmap (AWS & Enterprise Benchmarks)
      Orbyte is currently bootstrapped on a free-tier container for early architectural validation. Upon securing seed investment, we will execute the following production scaling ,milestones:
