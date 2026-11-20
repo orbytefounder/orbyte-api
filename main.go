@@ -18,8 +18,6 @@ func main() {
 	pool := NewVectorDBPool("https://httpbin.org", 1000)
 	gateway := NewOrbyteGateway(pool)
 	mux := http.NewServeMux()
-	liveHandler := func(w http.ResponseWriter, r *http.Request) {
-		start := time.Now
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		start := time.Now()
 		query := r.URL.Query().Get("query")
@@ -35,7 +33,8 @@ func main() {
 		w.WriteHeader(http.StatusOK)
 		fmt.Fprintf(w, `{"status":"operational","engine":"Orbyte Pure Golang Gateway","tested_query":"%s","core_execution_time":"%v","live_heap_mb":%.2f}`, query, elapsed, heapMB)
 		}
-		mux.HandleFunc("/traffic", liveHandler)
+		mux.HandleFunc("/traffic", func(w http.ResponseWriter, r *http.Request) {
+			start := time.Now()
 		query := r.URL.Query().Get("query")
 		if query == "" {
 			query = "vector_bench"
