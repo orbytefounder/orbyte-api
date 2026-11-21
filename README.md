@@ -12,7 +12,7 @@ Unlike heavy, general-purpose middleware (such as Kong or Hasura) that rely on c
 7. **OS-Level Graceful Shutdown:** Captures`SIGTERM`/`SIGINT` signals to drain active requests safely with zero packet loss.
    ## Production Validation & Live Telemetry
    * **1-Click Live Investor Sandbox (No API Key Needed):**
-    [ https://orbyte-api.onrender.com ] *(~29.5μs-62.6μs core execution, 0.27MB-1.11MB  live heap memory)*
+    [ https://orbyte-api.onrender.com?query=yc_review ] *(~29.5μs-62.6μs core execution, 0.27MB-1.11MB  live heap memory)*
    * **1-Click Terminal Verification :** curl -i https://orbyte-api.onrender.com
    * **Practical k6 Load Test & Competitive Benchmark Reports ( Orbyte vs . Hasura & Kong):** [View Full BENCHMARKS.md Report]
      ( https://github.com/orbytefounder/orbyte-api/blob/main/BENCHMARKS.md ) *(86-133 sustained requests, 0.00% error rate, 50%+ cloud cost reduction)*
